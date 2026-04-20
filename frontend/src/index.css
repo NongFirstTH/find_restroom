@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* Leaflet z-index fix */
+  .leaflet-pane { z-index: 10; }
+  .leaflet-top, .leaflet-bottom { z-index: 20; }
+}
+
+@layer components {
+  .input-field {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    color: #1f2937;
+    font-size: 0.875rem;
+    transition-property: color, background-color, border-color;
+    transition-duration: 150ms;
+  }
+
+  .input-field::placeholder {
+    color: #9ca3af;
+  }
+
+  .input-field:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #14b8a6;
+    border-color: transparent;
+  }
+
+  .dark .input-field {
+    border-color: #374151;
+    background-color: #1f2937;
+    color: #f3f4f6;
+  }
+}
